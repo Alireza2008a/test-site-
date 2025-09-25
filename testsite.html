@@ -18,7 +18,6 @@
     *{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif}
     body{ background:var(--bg); color:var(--text); overflow-x:hidden; }
 
-    /* Ultra background: Animated aurora + holographic mesh + soft noise */
     .bg-stage{ position:fixed; inset:0; z-index:-2; overflow:hidden; }
     .aurora{
       position:absolute; inset:-20%;
@@ -66,11 +65,9 @@
       to{ transform:translate3d(-30px,-20px,0); }
     }
 
-    /* Neon typography glow */
     .brand{font-family:'Orbitron',sans-serif; letter-spacing:.5px}
     .neon{ color:var(--accent); text-shadow:0 0 8px rgba(0,229,255,.6), 0 0 18px rgba(0,229,255,.28); }
 
-    /* Glass + soft halo */
     .glass{ background:rgba(16,23,34,.6); border:1px solid rgba(255,255,255,.06); backdrop-filter: blur(18px); }
     .halo{ position:relative; }
     .halo::before{
@@ -82,11 +79,9 @@
       filter: blur(14px); opacity:.95;
     }
 
-    /* 3) Holographic borders (removed spinning effect) */
     .holo-border{ border-radius:18px; }
     .holo-border::after{ content:none; }
 
-    /* 2) Liquid/Gooey hover for buttons */
     .btn{
       position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
       font-weight:700; color:white; border-radius:14px; padding:.75rem 1rem;
@@ -121,13 +116,11 @@
     .btn-ghost:hover{ border-color:rgba(0,229,255,.45); color:var(--accent); transform: translateY(-2px); }
     .btn-ghost:hover::before{ opacity:1; }
 
-    /* Chips and cards */
     .card{ background: rgba(16,23,34,.72); border:1px solid rgba(255,255,255,.06); transition: transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s; }
     .card:hover{ transform: translateY(-8px) scale(1.01); box-shadow: 0 26px 70px rgba(0,229,255,.2); }
     .chip{ background: rgba(0,229,255,.10); color:#bfefff; border:1px solid rgba(0,229,255,.28); transition:transform .2s, box-shadow .25s; }
     .chip:hover{ transform: translateY(-2px); box-shadow:0 10px 28px rgba(0,229,255,.25); }
 
-    /* Inputs */
     .input{
       background:#0d1219; border:1px solid rgba(255,255,255,.08); color:#dfe9ff; border-radius:14px; padding:.6rem .85rem;
       transition:border-color .2s, box-shadow .2s;
@@ -143,7 +136,6 @@
     .stars{ color:#ffd54a; }
     .badge-off{ background:linear-gradient(45deg, #ef4444, #f472b6); color:white; }
 
-    /* Banner mask and page reveal */
     .banner-mask{
       mask-image: linear-gradient(to bottom, black 70%, transparent);
       -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
@@ -178,19 +170,15 @@
     .step-dot{ width:10px; height:10px; border-radius:9999px; background:#2b3342; }
     .step-dot.active{ background:var(--accent); box-shadow:0 0 12px rgba(0,229,255,.6); }
 
-    /* Country list scroll */
     .scroll-y{ max-height: 320px; overflow-y: auto; }
     .flag{ font-size:20px; }
 
-    /* Navbar precise spacing */
     .nav-links a{ position:relative; }
     .nav-links{ gap:14px; } /* pixel-precise spacing */
 
-    /* 8) Mini Cart */
     .mini{ animation: miniIn .18s ease; }
     @keyframes miniIn{ from{opacity:0; transform: translateY(-6px);} to{opacity:1; transform: translateY(0);} }
 
-    /* 13) Skeleton loading */
     .skeleton{ position:relative; overflow:hidden; }
     .skeleton::after{
       content:""; position:absolute; inset:0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
@@ -198,22 +186,18 @@
     }
     @keyframes shimmer{ to{ transform: translateX(100%);} }
 
-    /* Canvas for particles sits in hero */
     #particleLayer{ mix-blend-mode: screen; }
   </style>
 </head>
 <body>
-  <!-- Background Stage -->
   <div class="bg-stage">
     <div class="aurora"></div>
     <div class="holo-mesh"></div>
     <div class="noize"></div>
   </div>
 
-  <!-- Toast -->
   <div id="notify" class="notify glass px-4 py-3 rounded-xl shadow-lg"></div>
 
-  <!-- Navbar -->
   <nav class="sticky top-0 z-50 glass">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
@@ -227,7 +211,6 @@
         </div>
       </div>
 
-      <!-- Search -->
       <div class="relative w-full max-w-lg hidden md:block">
         <input id="searchInput" class="input w-full pr-10" placeholder="Search products..."
                oninput="handleSearch(this.value)" onfocus="showSearchResults()" onblur="hideSearchResults()"/>
@@ -235,7 +218,6 @@
         <div id="searchResults" class="search-dd"></div>
       </div>
 
-      <!-- Actions + Mini Cart -->
       <div class="flex items-center gap-[10px]">
         <button id="accountBtn" class="btn-ghost px-4 py-2 rounded-xl hidden sm:inline-flex" onclick="openAccount()">
           Account
@@ -1248,3 +1230,4 @@
   </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'984b4b2995ed5d93',t:'MTc1ODgxMTQwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
